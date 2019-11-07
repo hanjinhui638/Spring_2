@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- Wheel, Engine -->
+	<bean class="com.jh.s2.Wheel" id="wheel"> 
+		<!-- setter 호출  default생성자 사용  -->
+		<!-- <property name="brand" value="Hankook"></property> 멤버변수
+		<property name="size" value="20"></property> -->
+		
+		
+		
+		<!-- Constructor 호출 -->
+		<!-- <constructor-arg name="brand" value="Kumho"></constructor-arg>
+		<constructor-arg name="size" value="20"></constructor-arg> -->
+		
+		<!-- <constructor-arg index="0" value="Kumho"></constructor-arg>
+		<constructor-arg index="1" value="200"></constructor-arg> -->
+		
+		<constructor-arg type="java.lang.String" value="Kumho"></constructor-arg>  <!-- xml은 풀패키지명 -->
+		<constructor-arg type="java.lang.Integer" value="20"></constructor-arg>
+		
+	</bean>
+	
+	
+	<bean class="com.jh.s2.Engine" id="engine">
+		<property name="fuel" ><value>Gas</value></property>
+		<property name="hp" value="100"></property>
+	</bean>
+	
+	
+	<!-- Car car = new Car() 클래스생성-->
+	<bean class="com.jh.s2.Car" id="car">
+		<property name="wheel" ref="wheel"></property> <!-- 참조변수 wheel reference타입 -> ref String-> value -->
+		<property name="engine" ref="engine"></property>
+			
+		<property name="price" >
+			<map>
+				<entry>
+					<key>p1</key>
+					<value>200</value>
+				</entry>
+				<entry>
+					<key>p2</key>
+					<ref bean=""/>			
+				</entry>	
+			</map>
+		
+		
+		</property>	
+		
+		
+		<property name="name" >
+			<list>
+				<value>iu</value>
+				<value>suji</value>
+				<!-- <ref bean=""/> -->
+			</list>
+		</property>
+	</bean>
+		
+</beans>
