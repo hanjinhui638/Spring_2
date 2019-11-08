@@ -1,5 +1,8 @@
 package com.jh.s2;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Engine {
 	
 	private String fuel;//연료

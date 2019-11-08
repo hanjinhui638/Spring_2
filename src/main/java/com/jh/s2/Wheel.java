@@ -1,5 +1,8 @@
 package com.jh.s2;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Wheel {
 	private String brand;
 	private int size;

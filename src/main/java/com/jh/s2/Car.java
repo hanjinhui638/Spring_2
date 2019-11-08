@@ -3,11 +3,29 @@ package com.jh.s2;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Car {
 	private Engine engine;
 	private Wheel wheel;
 	private ArrayList<String> name;
 	private HashMap<String, Integer>price;
+	
+	@PostConstruct
+	public void init() {
+		//초기화 
+		
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		//메서드 소멸 직전에 사용하고 싶을 때 
+		
+	}
 	
 	public Car() {
 		// TODO Auto-generated constructor stub
